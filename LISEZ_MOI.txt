@@ -1,0 +1,52 @@
+BATIDEKO — RÉCEPTION DE SUPPORTS — VERSION DE DÉVELOPPEMENT 1
+============================================================
+
+CONTENU : index.html, app.js, pdf.min.js, pdf.worker.min.js, sw.js,
+manifest.webmanifest et icon.png.
+
+INSTALLATION IPHONE :
+1. Publier l'intégralité de ce dossier sur un site HTTPS statique (par exemple
+   GitHub Pages, gratuit pour un dépôt public).
+2. Ouvrir l'adresse HTTPS dans Safari sur l'iPhone.
+3. Menu Partager > Sur l'écran d'accueil > Ajouter.
+4. Ouvrir l'icône BATIDEKO, créer un dossier et importer le PDF depuis Fichiers.
+
+IMPORTANT : ne PAS ouvrir index.html depuis Fichiers sur iPhone. Les fichiers
+locaux file:// ne garantissent pas l'accès aux fonctionnalités de l'application.
+
+FONCTIONS IMPLÉMENTÉES :
+- Dossiers locaux, import PDF, affichage page par page et zoom.
+- Réserves associées à une page du PDF, numéro et localisation.
+- Possibilité de rattacher une page différente pour les photos client.
+- Photos BATIDEKO via sélecteur demandant la caméra arrière iPhone.
+- Commentaires, 4 statuts, sauvegarde automatique IndexedDB.
+- Sauvegarde complète exportable en JSON et restauration sans écrasement.
+- Rapport PDF autonome : page de garde, chaque page du PDF client rendue en
+  image, réponses associées et synthèse finale.
+- Récupération du dernier rapport généré.
+
+LIMITES ACTUELLES :
+- Test iPhone Safari réel NON EFFECTUÉ : caméra, partage, stockage, impression.
+- Les pages originales sont reproduites dans le rapport comme images raster,
+  non incorporées en PDF vectoriel. Le PDF original reste intact dans le dossier.
+- Le vis-à-vis affiche la page du client (pas le recadrage automatique de chaque
+  photo du client). La correspondance photo par photo est une étape suivante.
+- Le téléchargement iOS peut nécessiter d'ouvrir le fichier dans Téléchargements
+  puis de choisir Partager > Mail / Imprimer / Enregistrer dans Fichiers.
+- Sauvegardes JSON volumineuses selon le nombre de photos. Toujours exporter
+  dans Fichiers ou iCloud Drive : le stockage local iOS peut être supprimé.
+- L'application ne possède pas encore de lien public hébergé : l'utilisateur
+  doit publier le pack sur un site HTTPS pour le tester sur iPhone.
+- Les données clients restent sur l'appareil lors de l'utilisation ; attention :
+  un dépôt GitHub Pages PUBLIC ne doit contenir que les fichiers de l'application,
+  jamais de PDF ou photos clients.
+
+TESTS À FAIRE SUR IPHONE AVANT UTILISATION EN PRODUCTION :
+1. Importer le PDF PICHET de 20 pages ; afficher pages 7 et 8.
+2. Sur page 7, créer réserve 3406, photos client page 8, prendre 1 photo.
+3. Ajouter commentaire, changer statut, fermer/réouvrir l'application.
+4. Sauvegarder, restaurer, générer le PDF, vérifier le résultat.
+5. Vérifier envoi Mail et impression AirPrint.
+
+Ce pack est un prototype de développement et ne doit pas encore être utilisé
+comme seul stockage de documents professionnels.
